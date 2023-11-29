@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class playerMoney : MonoBehaviour
+{
+    public int money;
+    public Text moneyText;
+    // Start is called before the first frame update
+    void Start()
+    {
+        money = 250;
+        moneyText.text = money.ToString();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void AddMoney(int moneyToAdd)
+    {
+        money += moneyToAdd;
+        moneyText.text = money.ToString();
+    }
+
+    public void subtractMoney(int moneyToSubtract)
+    {
+        if(money - moneyToSubtract < 0)
+        {
+            Debug.Log("We don't have money left!");
+        }
+        else
+        {
+            money -= moneyToSubtract;
+        }
+    }
+
+}
